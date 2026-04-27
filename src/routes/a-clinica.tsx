@@ -33,13 +33,13 @@ const values = [
 function ClinicaPage() {
   return (
     <Layout>
-      <section className="bg-gradient-hero text-primary-foreground py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-6 max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] opacity-80 mb-4">A Clínica</p>
-          <h1 className="text-4xl md:text-5xl font-bold font-display leading-tight mb-5">
+      <section className="bg-gradient-hero text-primary-foreground py-16 sm:py-20 md:py-28">
+        <div className="container mx-auto px-4 sm:px-6 max-w-3xl text-center">
+          <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.3em] opacity-80 mb-4">A Clínica</p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display leading-tight mb-5">
             Mais de 15 anos cuidando de quem você ama.
           </h1>
-          <p className="text-lg opacity-90 leading-relaxed">
+          <p className="text-base sm:text-lg opacity-90 leading-relaxed">
             Uma clínica nascida do propósito de unir medicina veterinária de alto nível
             com o acolhimento que cada família e cada pet merecem.
           </p>
@@ -47,8 +47,8 @@ function ClinicaPage() {
       </section>
 
       {/* HISTÓRIA */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-14 items-center max-w-6xl">
+      <section className="py-14 sm:py-16 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center max-w-6xl">
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-accent mb-3">Nossa história</p>
             <h2 className="text-3xl md:text-4xl font-bold font-display mb-6">Do sonho à referência regional</h2>
@@ -96,9 +96,9 @@ function ClinicaPage() {
       </section>
 
       {/* VALORES */}
-      <section className="py-20 bg-gradient-soft">
-        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-          <div className="text-center max-w-2xl mx-auto mb-12">
+      <section className="py-14 sm:py-16 lg:py-20 bg-gradient-soft">
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <p className="text-sm font-semibold uppercase tracking-widest text-accent mb-3">Valores</p>
             <h2 className="text-3xl md:text-4xl font-bold font-display">O que nos guia todos os dias</h2>
           </div>
@@ -115,9 +115,9 @@ function ClinicaPage() {
       </section>
 
       {/* EQUIPE */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-          <div className="text-center max-w-2xl mx-auto mb-12">
+      <section className="py-14 sm:py-16 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <p className="text-sm font-semibold uppercase tracking-widest text-accent mb-3">Equipe</p>
             <h2 className="text-3xl md:text-4xl font-bold font-display">Profissionais apaixonados pelo que fazem</h2>
           </div>

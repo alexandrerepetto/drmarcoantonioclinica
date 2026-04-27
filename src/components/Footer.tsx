@@ -4,8 +4,8 @@ import logo from "@/assets/logo.png";
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground mt-24">
-      <div className="container mx-auto px-4 py-14 md:px-6 grid gap-10 md:grid-cols-4">
+    <footer className="bg-primary text-primary-foreground mt-16 sm:mt-24 pb-20 md:pb-0">
+      <div className="container mx-auto px-4 py-10 sm:py-14 sm:px-6 grid gap-8 sm:gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-4">
           <div className="flex items-center gap-3">
             <img src={logo} alt="Logo" className="h-12 w-12 rounded-full bg-white" width={48} height={48} loading="lazy" />

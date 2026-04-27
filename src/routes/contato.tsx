@@ -46,21 +46,21 @@ const blocks = [
 function ContatoPage() {
   return (
     <Layout>
-      <section className="bg-gradient-hero text-primary-foreground py-20 md:py-24">
-        <div className="container mx-auto px-4 md:px-6 max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] opacity-80 mb-4">Contato</p>
-          <h1 className="text-4xl md:text-5xl font-bold font-display leading-tight mb-5">
+      <section className="bg-gradient-hero text-primary-foreground py-16 sm:py-20 md:py-24">
+        <div className="container mx-auto px-4 sm:px-6 max-w-3xl text-center">
+          <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.3em] opacity-80 mb-4">Contato</p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display leading-tight mb-5">
             Vamos cuidar do seu pet juntos
           </h1>
-          <p className="text-lg opacity-90">
+          <p className="text-base sm:text-lg opacity-90">
             Agende uma consulta pelo canal que preferir. Estamos prontos para atender você.
           </p>
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
+      <section className="py-12 sm:py-16">
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-12 sm:mb-16">
             {blocks.map((b) => (
               <div
                 key={b.title}
@@ -88,8 +88,8 @@ function ContatoPage() {
             ))}
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 items-stretch">
-            <div className="bg-card rounded-2xl p-8 border border-border shadow-card">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-stretch">
+            <div className="bg-card rounded-2xl p-6 sm:p-8 border border-border shadow-card">
               <h2 className="text-2xl font-bold font-display mb-6">Onde estamos</h2>
               <ul className="space-y-5">
                 <li className="flex gap-4">
@@ -139,11 +139,11 @@ function ContatoPage() {
               </ul>
             </div>
 
-            <div className="rounded-2xl overflow-hidden shadow-card border border-border min-h-[400px]">
+            <div className="rounded-2xl overflow-hidden shadow-card border border-border min-h-[300px] sm:min-h-[400px]">
               <iframe
                 title="Mapa da clínica"
                 src="https://www.google.com/maps?q=Av.+Paulista,+1500,+Bela+Vista,+São+Paulo&output=embed"
-                className="w-full h-full min-h-[400px] border-0"
+                className="w-full h-full min-h-[300px] sm:min-h-[400px] border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />

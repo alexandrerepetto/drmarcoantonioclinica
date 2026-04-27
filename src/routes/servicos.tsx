@@ -69,30 +69,30 @@ const categorias = [
 function ServicosPage() {
   return (
     <Layout>
-      <section className="bg-gradient-hero text-primary-foreground py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-6 max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] opacity-80 mb-4">Serviços</p>
-          <h1 className="text-4xl md:text-5xl font-bold font-display leading-tight mb-5">
+      <section className="bg-gradient-hero text-primary-foreground py-16 sm:py-20 md:py-28">
+        <div className="container mx-auto px-4 sm:px-6 max-w-3xl text-center">
+          <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.3em] opacity-80 mb-4">Serviços</p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display leading-tight mb-5">
             Cuidado completo em todas as fases da vida do seu pet
           </h1>
-          <p className="text-lg opacity-90">
+          <p className="text-base sm:text-lg opacity-90">
             Da primeira vacina ao cuidado geriátrico, oferecemos uma estrutura completa
             com profissionais especializados.
           </p>
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="container mx-auto px-4 md:px-6 max-w-6xl space-y-16">
+      <section className="py-14 sm:py-16 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl space-y-12 sm:space-y-16">
           {categorias.map((cat) => (
             <div key={cat.title}>
-              <div className="flex items-center gap-3 mb-8">
-                <div className="rounded-xl bg-primary text-primary-foreground p-3">
-                  <cat.icon className="h-6 w-6" />
+              <div className="flex items-center gap-3 mb-6 sm:mb-8">
+                <div className="rounded-xl bg-primary text-primary-foreground p-2.5 sm:p-3 shrink-0">
+                  <cat.icon className="h-5 w-5 sm:h-6 sm:w-6" />
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold font-display">{cat.title}</h2>
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold font-display">{cat.title}</h2>
               </div>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
                 {cat.items.map((item) => (
                   <div
                     key={item.name}
@@ -109,14 +109,14 @@ function ServicosPage() {
             </div>
           ))}
 
-          <div className="bg-gradient-hero text-primary-foreground rounded-3xl p-10 md:p-12 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold font-display mb-3">
+          <div className="bg-gradient-hero text-primary-foreground rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-12 text-center">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold font-display mb-3">
               Não encontrou o que procurava?
             </h2>
-            <p className="opacity-90 mb-6 max-w-xl mx-auto">
+            <p className="opacity-90 text-sm sm:text-base mb-6 max-w-xl mx-auto">
               Fale com nossa equipe — montamos um plano de cuidado sob medida para o seu pet.
             </p>
-            <Button asChild variant="cta" size="xl">
+            <Button asChild variant="cta" size="xl" className="w-full sm:w-auto">
               <Link to="/contato">Falar com a Clínica</Link>
             </Button>
           </div>
