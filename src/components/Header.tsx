@@ -16,12 +16,12 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-background/85 backdrop-blur-md">
-      <div className="container mx-auto flex h-18 items-center justify-between px-4 py-3 md:px-6">
-        <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Clínica Veterinária Dr. Marco Antônio" className="h-12 w-12 rounded-full" width={48} height={48} />
-          <div className="hidden sm:block leading-tight">
-            <p className="font-display text-sm font-bold text-primary">Dr. Marco Antônio</p>
-            <p className="text-[11px] uppercase tracking-widest text-muted-foreground">Clínica Veterinária</p>
+      <div className="container mx-auto flex h-16 sm:h-18 items-center justify-between px-4 py-3 sm:px-6">
+        <Link to="/" className="flex items-center gap-2 sm:gap-3 min-w-0">
+          <img src={logo} alt="Clínica Veterinária Dr. Marco Antônio" className="h-10 w-10 sm:h-12 sm:w-12 rounded-full shrink-0" width={48} height={48} />
+          <div className="hidden xs:block sm:block leading-tight min-w-0">
+            <p className="font-display text-xs sm:text-sm font-bold text-primary truncate">Dr. Marco Antônio</p>
+            <p className="text-[10px] sm:text-[11px] uppercase tracking-widest text-muted-foreground truncate">Clínica Veterinária</p>
           </div>
         </Link>
 

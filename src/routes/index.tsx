@@ -52,23 +52,23 @@ function HomePage() {
       {/* HERO */}
       <section className="relative overflow-hidden bg-gradient-hero text-primary-foreground">
         <div className="absolute inset-0 opacity-20" aria-hidden>
-          <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-white blur-3xl" />
-          <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-accent blur-3xl" />
+          <div className="absolute -top-24 -left-24 h-72 w-72 sm:h-96 sm:w-96 rounded-full bg-white blur-3xl" />
+          <div className="absolute bottom-0 right-0 h-72 w-72 sm:h-96 sm:w-96 rounded-full bg-accent blur-3xl" />
         </div>
-        <div className="container relative mx-auto px-4 md:px-6 py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 max-w-xl">
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest backdrop-blur">
+        <div className="container relative mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-24 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+          <div className="space-y-5 sm:space-y-6 max-w-xl text-center lg:text-left mx-auto lg:mx-0">
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 sm:px-4 py-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-widest backdrop-blur">
               <Heart className="h-3.5 w-3.5 fill-current" /> Cuidado humanizado
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-[1.05]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-[1.1]">
               O melhor cuidado para quem é parte da sua família.
             </h1>
-            <p className="text-lg opacity-90 leading-relaxed">
+            <p className="text-base sm:text-lg opacity-90 leading-relaxed">
               Há mais de 15 anos cuidando da saúde e do bem-estar de cães e gatos com
               profissionais especializados, estrutura completa e muito amor.
             </p>
-            <div className="flex flex-wrap gap-3 pt-2">
-              <Button asChild variant="cta" size="xl">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-3 pt-2">
+              <Button asChild variant="cta" size="xl" className="w-full sm:w-auto">
                 <a
                   href="https://wa.me/5511998765432?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta."
                   target="_blank"
@@ -77,17 +77,17 @@ function HomePage() {
                   Agendar Consulta <ArrowRight className="h-5 w-5" />
                 </a>
               </Button>
-              <Button asChild variant="outlineLight" size="xl">
+              <Button asChild variant="outlineLight" size="xl" className="w-full sm:w-auto">
                 <Link to="/servicos">Ver Serviços</Link>
               </Button>
             </div>
-            <div className="flex items-center gap-6 pt-4 text-sm">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 pt-4 text-sm">
               <div className="flex items-center gap-2"><ShieldCheck className="h-5 w-5 text-accent" /> CRMV-SP 12345</div>
               <div className="flex items-center gap-2"><Star className="h-5 w-5 text-accent fill-accent" /> 4.9 / 5 (320+)</div>
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative mt-2 lg:mt-0 max-w-md mx-auto lg:max-w-none w-full">
             <div className="absolute -inset-4 bg-white/10 rounded-3xl blur-2xl" />
             <img
               src={heroVet}
@@ -96,13 +96,13 @@ function HomePage() {
               height={1024}
               className="relative rounded-3xl shadow-2xl object-cover w-full aspect-[4/3]"
             />
-            <div className="absolute -bottom-5 -left-5 bg-card text-card-foreground rounded-2xl shadow-card p-4 flex items-center gap-3 max-w-[260px]">
-              <div className="rounded-full bg-accent/15 p-2.5">
-                <Heart className="h-5 w-5 text-accent fill-accent" />
+            <div className="absolute -bottom-4 -left-2 sm:-bottom-5 sm:-left-5 bg-card text-card-foreground rounded-2xl shadow-card p-3 sm:p-4 flex items-center gap-3 max-w-[220px] sm:max-w-[260px]">
+              <div className="rounded-full bg-accent/15 p-2 sm:p-2.5">
+                <Heart className="h-4 w-4 sm:h-5 sm:w-5 text-accent fill-accent" />
               </div>
               <div>
-                <p className="text-2xl font-bold font-display text-primary">+5.000</p>
-                <p className="text-xs text-muted-foreground">pets atendidos com amor</p>
+                <p className="text-xl sm:text-2xl font-bold font-display text-primary">+5.000</p>
+                <p className="text-[11px] sm:text-xs text-muted-foreground">pets atendidos com amor</p>
               </div>
             </div>
           </div>
@@ -110,8 +110,8 @@ function HomePage() {
       </section>
 
       {/* RESUMO PROFISSIONAL */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <section className="py-14 sm:py-16 lg:py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-accent mb-3">Nosso diferencial</p>
             <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-6">
@@ -147,9 +147,9 @@ function HomePage() {
       </section>
 
       {/* DESTAQUE DE SERVIÇOS */}
-      <section className="py-20 bg-gradient-soft">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-2xl mx-auto mb-12">
+      <section className="py-14 sm:py-16 lg:py-20 bg-gradient-soft">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <p className="text-sm font-semibold uppercase tracking-widest text-accent mb-3">Serviços</p>
             <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground">
               Tudo o que seu pet precisa em um só lugar
@@ -178,9 +178,9 @@ function HomePage() {
       </section>
 
       {/* PROVA SOCIAL */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-2xl mx-auto mb-12">
+      <section className="py-14 sm:py-16 lg:py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <p className="text-sm font-semibold uppercase tracking-widest text-accent mb-3">Depoimentos</p>
             <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground">
               O que nossos tutores dizem
@@ -206,24 +206,24 @@ function HomePage() {
       </section>
 
       {/* CTA FINAL */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="bg-gradient-hero rounded-3xl p-10 md:p-16 text-center text-primary-foreground relative overflow-hidden">
-            <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-accent/30 blur-3xl" aria-hidden />
+      <section className="py-14 sm:py-16 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="bg-gradient-hero rounded-2xl sm:rounded-3xl p-8 sm:p-10 md:p-16 text-center text-primary-foreground relative overflow-hidden">
+            <div className="absolute -top-20 -right-20 h-60 w-60 sm:h-72 sm:w-72 rounded-full bg-accent/30 blur-3xl" aria-hidden />
             <div className="relative max-w-2xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold font-display mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-display mb-4">
                 Pronto para agendar a consulta do seu pet?
               </h2>
-              <p className="opacity-90 text-lg mb-8">
+              <p className="opacity-90 text-base sm:text-lg mb-6 sm:mb-8">
                 Atendimento ágil, sem filas e com toda atenção que seu melhor amigo merece.
               </p>
-              <div className="flex flex-wrap justify-center gap-3">
-                <Button asChild variant="cta" size="xl">
+              <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3">
+                <Button asChild variant="cta" size="xl" className="w-full sm:w-auto">
                   <a href="https://wa.me/5511998765432" target="_blank" rel="noreferrer">
                     Agendar pelo WhatsApp
                   </a>
                 </Button>
-                <Button asChild variant="outlineLight" size="xl">
+                <Button asChild variant="outlineLight" size="xl" className="w-full sm:w-auto">
                   <a href="tel:+551140028922"><Phone className="h-5 w-5" /> (11) 4002-8922</a>
                 </Button>
               </div>
