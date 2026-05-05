@@ -1,9 +1,11 @@
+/* 1. CONFIGURAÇÕES TÉCNICAS (Tailwind v4 & Plugins) */
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
+/* 2. DEFINIÇÃO DO TEMA (Mapeamento de Variáveis Tailwind) */
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -11,6 +13,7 @@
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -32,10 +35,12 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-whatsapp: var(--whatsapp);
+
   --font-display: "Poppins", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
+/* 3. CORES E VARIÁVEIS GLOBAIS (Light Mode) */
 :root {
   --radius: 0.875rem;
 
@@ -48,19 +53,19 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.05 250);
 
-  /* Primary: trustworthy blue (matches logo) */
+  /* Primary: Azul Clínico Confiável */
   --primary: oklch(0.55 0.18 250);
   --primary-foreground: oklch(0.99 0.005 240);
   --primary-soft: oklch(0.95 0.04 250);
 
-  /* Secondary / Accent: warm orange CTA */
+  /* Secondary / Accent: Laranja Vibrante para CTA */
   --secondary: oklch(0.96 0.02 250);
   --secondary-foreground: oklch(0.25 0.08 250);
 
   --muted: oklch(0.96 0.015 250);
   --muted-foreground: oklch(0.5 0.03 250);
 
-  --accent: oklch(0.72 0.18 50);          /* orange */
+  --accent: oklch(0.72 0.18 50);
   --accent-foreground: oklch(0.99 0.01 50);
 
   --destructive: oklch(0.6 0.22 27);
@@ -72,15 +77,18 @@
 
   --whatsapp: oklch(0.65 0.16 145);
 
+  /* Grarients Customizados */
   --gradient-hero: linear-gradient(135deg, oklch(0.55 0.18 250) 0%, oklch(0.45 0.2 255) 100%);
   --gradient-soft: linear-gradient(180deg, oklch(0.97 0.02 250) 0%, oklch(0.99 0.005 240) 100%);
   --gradient-cta: linear-gradient(135deg, oklch(0.74 0.18 55) 0%, oklch(0.68 0.2 40) 100%);
 
+  /* Sombras (Elevation) */
   --shadow-soft: 0 4px 24px -8px oklch(0.55 0.18 250 / 0.18);
   --shadow-cta: 0 8px 24px -8px oklch(0.7 0.2 50 / 0.45);
   --shadow-card: 0 2px 12px -4px oklch(0.55 0.18 250 / 0.1);
 }
 
+/* 4. CONFIGURAÇÕES PARA MODO ESCURO */
 .dark {
   --background: oklch(0.15 0.04 250);
   --foreground: oklch(0.98 0.005 240);
@@ -102,9 +110,11 @@
   --ring: oklch(0.7 0.16 250);
 }
 
+/* 5. ESTILOS BASE (Resets e Tipografia) */
 @layer base {
   * {
     border-color: var(--color-border);
+    @apply transition-colors duration-200;
   }
   html {
     scroll-behavior: smooth;
@@ -114,18 +124,28 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   h1, h2, h3, h4, h5 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
+    font-weight: 700;
   }
 }
 
+/* 6. UTILITÁRIOS CUSTOMIZADOS */
 @layer utilities {
   .bg-gradient-hero { background-image: var(--gradient-hero); }
   .bg-gradient-soft { background-image: var(--gradient-soft); }
   .bg-gradient-cta  { background-image: var(--gradient-cta); }
+  
   .shadow-soft { box-shadow: var(--shadow-soft); }
   .shadow-cta  { box-shadow: var(--shadow-cta); }
   .shadow-card { box-shadow: var(--shadow-card); }
+
+  /* Impede que o usuário selecione ícones como texto */
+  .icon-no-select {
+    user-select: none;
+    pointer-events: none;
+  }
 }
