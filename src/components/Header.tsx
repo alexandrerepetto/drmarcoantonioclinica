@@ -19,7 +19,7 @@ export function Header() {
       <div className="container mx-auto flex h-16 sm:h-18 items-center justify-between px-4 py-3 sm:px-6">
         <Link to="/" className="flex items-center gap-2 sm:gap-3 min-w-0">
           <img src={logo} alt="Clínica Veterinária Dr. Marco Antônio" className="h-10 w-10 sm:h-12 sm:w-12 rounded-full shrink-0" width={48} height={48} />
-          <div className="hidden xs:block sm:block leading-tight min-w-0">
+          <div className="block leading-tight min-w-0">
             <p className="font-display text-xs sm:text-sm font-bold text-primary truncate">Dr. Marco Antônio</p>
             <p className="text-[10px] sm:text-[11px] uppercase tracking-widest text-muted-foreground truncate">Clínica Veterinária</p>
           </div>
