@@ -6,9 +6,18 @@ export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground mt-16 sm:mt-24 pb-20 md:pb-0">
       <div className="container mx-auto px-4 py-10 sm:py-14 sm:px-6 grid gap-8 sm:gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        
+        {/* Coluna 1: Branding e Bio */}
         <div className="space-y-4">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Logo" className="h-12 w-12 rounded-full bg-white" width={48} height={48} loading="lazy" />
+            <img 
+              src={logo} 
+              alt="Logo" 
+              className="h-12 w-12 rounded-full bg-white" 
+              width={48} 
+              height={48} 
+              loading="lazy" 
+            />
             <div>
               <p className="font-display font-bold">Dr. Marco Antônio</p>
               <p className="text-xs opacity-80 uppercase tracking-widest">Clínica Veterinária</p>
@@ -27,6 +36,7 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Coluna 2: Links Rápidos */}
         <div>
           <h4 className="font-display font-semibold mb-4 text-base">Navegação</h4>
           <ul className="space-y-2 text-sm opacity-90">
@@ -37,6 +47,7 @@ export function Footer() {
           </ul>
         </div>
 
+        {/* Coluna 3: Informações de Contato */}
         <div>
           <h4 className="font-display font-semibold mb-4 text-base">Contato</h4>
           <ul className="space-y-3 text-sm opacity-90">
@@ -65,6 +76,7 @@ export function Footer() {
           </ul>
         </div>
 
+        {/* Coluna 4: Horários */}
         <div>
           <h4 className="font-display font-semibold mb-4 text-base">Horário</h4>
           <ul className="space-y-2 text-sm opacity-90">
@@ -80,6 +92,7 @@ export function Footer() {
         </div>
       </div>
 
+      {/* Barra Inferior: Copyright */}
       <div className="border-t border-white/10">
         <div className="container mx-auto px-4 md:px-6 py-5 text-xs opacity-75 flex flex-col sm:flex-row justify-between gap-2">
           <p>© {new Date().getFullYear()} Clínica Veterinária Dr. Marco Antônio. Todos os direitos reservados.</p>
