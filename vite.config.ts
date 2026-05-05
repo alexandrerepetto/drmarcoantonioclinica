@@ -1,18 +1,17 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { tanstackRouterVite } from "@tanstack/router-plugin/vite"; // MUDANÇA AQUI
+import { TanStackRouterVite } from "@tanstack/router-plugin/vite"; // MUDANÇA: T, S, R e V maiúsculos
 import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [
-    tanstackRouterVite(), // Usando o plugin do Router que é compatível
-    tsconfigPaths(),
-    tailwindcss(),
+    TanStackRouterVite(), // MUDANÇA: Nome corrigido aqui também
     react(),
+    tailwindcss(),
+    tsconfigPaths(),
   ],
   build: {
     target: "es2022",
-    outDir: "dist", // Garante que a saída seja na pasta dist
   }
 });
