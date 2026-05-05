@@ -1,7 +1,7 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
-
 import appCss from "../styles.css?url";
 
+// Componente exibido quando o usuário acessa uma rota inexistente
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -24,21 +24,28 @@ function NotFoundComponent() {
   );
 }
 
+// Configuração da Rota Raiz (Head, SEO e Estrutura)
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      
+      // SEO Básico
       { title: "Clínica Veterinária Dr. Marco Antônio" },
       { name: "description", content: "Cuidado veterinário humanizado em São Paulo. Consultas, exames, vacinação, banho e tosa, cirurgias." },
       { name: "author", content: "Clínica Dr. Marco Antônio" },
+      
+      // Open Graph (Facebook/WhatsApp/LinkedIn)
       { property: "og:title", content: "Clínica Veterinária Dr. Marco Antônio" },
       { property: "og:description", content: "Cuidado veterinário humanizado em São Paulo. Consultas, exames, vacinação, banho e tosa, cirurgias." },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/39cc3fc2-82c7-409f-9222-294aa5f28955/id-preview-d481e928--3a15072a-7b10-4978-ae2e-00db29278739.lovable.app-1777307324985.png" },
+      
+      // Twitter
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Clínica Veterinária Dr. Marco Antônio" },
       { name: "twitter:description", content: "Cuidado veterinário humanizado em São Paulo. Consultas, exames, vacinação, banho e tosa, cirurgias." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/39cc3fc2-82c7-409f-9222-294aa5f28955/id-preview-d481e928--3a15072a-7b10-4978-ae2e-00db29278739.lovable.app-1777307324985.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/39cc3fc2-82c7-409f-9222-294aa5f28955/id-preview-d481e928--3a15072a-7b10-4978-ae2e-00db29278739.lovable.app-1777307324985.png" },
     ],
     links: [
@@ -56,6 +63,7 @@ export const Route = createRootRoute({
   notFoundComponent: NotFoundComponent,
 });
 
+// Estrutura Base do HTML
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
