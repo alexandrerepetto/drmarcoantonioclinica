@@ -3,6 +3,7 @@ import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Phone, MapPin, Clock, Mail, MessageCircle } from "lucide-react";
 
+// Configuração da Rota e SEO
 export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: [
@@ -15,6 +16,7 @@ export const Route = createFileRoute("/contato")({
   component: ContatoPage,
 });
 
+// Dados dos blocos de contato (Mantidos integralmente)
 const blocks = [
   {
     icon: MessageCircle,
@@ -46,9 +48,12 @@ const blocks = [
 function ContatoPage() {
   return (
     <Layout>
+      {/* 1. HERO SECTION */}
       <section className="bg-gradient-hero text-primary-foreground py-16 sm:py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 max-w-3xl text-center">
-          <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.3em] opacity-80 mb-4">Contato</p>
+          <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.3em] opacity-80 mb-4">
+            Contato
+          </p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display leading-tight mb-5">
             Vamos cuidar do seu pet juntos
           </h1>
@@ -60,12 +65,16 @@ function ContatoPage() {
 
       <section className="py-12 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+          
+          {/* 2. GRID DE CANAIS DE CONTATO */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-12 sm:mb-16">
             {blocks.map((b) => (
               <div
                 key={b.title}
-                className={`rounded-2xl p-7 border shadow-card flex flex-col ${
-                  b.accent ? "bg-gradient-cta text-accent-foreground border-transparent" : "bg-card border-border"
+                className={`rounded-2xl p-7 border shadow-card flex flex-col transition-all duration-300 ${
+                  b.accent 
+                    ? "bg-gradient-cta text-accent-foreground border-transparent hover:scale-[1.02]" 
+                    : "bg-card border-border hover:border-accent/30"
                 }`}
               >
                 <b.icon className={`h-8 w-8 mb-4 ${b.accent ? "" : "text-accent"}`} />
@@ -73,14 +82,21 @@ function ContatoPage() {
                   {b.title}
                 </p>
                 <p className="font-bold font-display text-xl mb-1 break-words">{b.primary}</p>
-                <p className={`text-sm mb-6 flex-1 ${b.accent ? "opacity-90" : "text-muted-foreground"}`}>{b.desc}</p>
+                <p className={`text-sm mb-6 flex-1 ${b.accent ? "opacity-90" : "text-muted-foreground"}`}>
+                  {b.desc}
+                </p>
+                
                 <Button
                   asChild
                   variant={b.accent ? "hero" : "default"}
                   size="default"
-                  className="w-full"
+                  className="w-full shadow-sm"
                 >
-                  <a href={b.href} target={b.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
+                  <a 
+                    href={b.href} 
+                    target={b.href.startsWith("http") ? "_blank" : undefined} 
+                    rel="noreferrer"
+                  >
                     {b.cta}
                   </a>
                 </Button>
@@ -88,12 +104,14 @@ function ContatoPage() {
             ))}
           </div>
 
+          {/* 3. ONDE ESTAMOS & MAPA */}
           <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-stretch">
+            {/* Bloco de Informações de Endereço */}
             <div className="bg-card rounded-2xl p-6 sm:p-8 border border-border shadow-card">
               <h2 className="text-2xl font-bold font-display mb-6">Onde estamos</h2>
-              <ul className="space-y-5">
+              <ul className="space-y-6">
                 <li className="flex gap-4">
-                  <div className="rounded-lg bg-primary-soft text-primary p-2.5 h-fit">
+                  <div className="rounded-lg bg-primary-soft text-primary p-2.5 h-fit shrink-0">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
@@ -105,14 +123,15 @@ function ContatoPage() {
                       href="https://maps.google.com/?q=Av.+Paulista,+1500,+Bela+Vista,+São+Paulo"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-sm text-accent font-medium hover:underline mt-1 inline-block"
+                      className="text-sm text-accent font-medium hover:underline mt-2 inline-flex items-center gap-1"
                     >
                       Ver no Google Maps →
                     </a>
                   </div>
                 </li>
-                <li className="flex gap-4">
-                  <div className="rounded-lg bg-primary-soft text-primary p-2.5 h-fit">
+                
+                <li className="flex gap-4 border-t border-border pt-6">
+                  <div className="rounded-lg bg-primary-soft text-primary p-2.5 h-fit shrink-0">
                     <Clock className="h-5 w-5" />
                   </div>
                   <div>
@@ -124,8 +143,9 @@ function ContatoPage() {
                     </ul>
                   </div>
                 </li>
-                <li className="flex gap-4">
-                  <div className="rounded-lg bg-primary-soft text-primary p-2.5 h-fit">
+                
+                <li className="flex gap-4 border-t border-border pt-6">
+                  <div className="rounded-lg bg-primary-soft text-primary p-2.5 h-fit shrink-0">
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
@@ -139,11 +159,12 @@ function ContatoPage() {
               </ul>
             </div>
 
-            <div className="rounded-2xl overflow-hidden shadow-card border border-border min-h-[300px] sm:min-h-[400px]">
+            {/* Container do Mapa (Iframe) */}
+            <div className="rounded-2xl overflow-hidden shadow-card border border-border min-h-[300px] sm:min-h-[400px] relative">
               <iframe
-                title="Mapa da clínica"
+                title="Mapa da localização da clínica Dr. Marco Antônio"
                 src="https://www.google.com/maps?q=Av.+Paulista,+1500,+Bela+Vista,+São+Paulo&output=embed"
-                className="w-full h-full min-h-[300px] sm:min-h-[400px] border-0"
+                className="absolute inset-0 w-full h-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
